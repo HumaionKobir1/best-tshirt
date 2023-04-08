@@ -1,14 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import TShirt from './TShirt';
 import Card from './Card';
+import {toast} from 'react-toastify';
+
 
 const Home = () => {
     const tshirts = useLoaderData();
+    const [cart, setCart] = useState([]);
     
     const handleAddToCart = (tshirt) => {
-        console.log(tshirt);
-    } 
+        const exists = cart.find(ts => ts._id === tshirt._id);
+        if(exists){
+            toast("You have already added")
+        }
+        else{
+            const newCart = [...cart, tshirt];
+            setCart(newCart);
+        }
+        
+    }
+    
+    const handleRemoveFromCart = id => {
+        const remaining = cart.filter(ts => ts._id !== id);
+        setCart(remaining);
+    }
     return (
         <div className='grid grid-cols-12 gap-8 container mx-auto'>
             <div className='grid lg:grid-cols-3 sm:grid-cols-1 col-span-9 gap-8'>
@@ -22,7 +38,10 @@ const Home = () => {
                 }
             </div>
             <div className='col-span-3'>
-                <Card></Card>
+                <Card
+                cart = {cart}
+                handleRemoveFromCart = {handleRemoveFromCart}
+                ></Card>
             </div>
         </div>
     );
