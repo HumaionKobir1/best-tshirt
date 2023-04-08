@@ -2,8 +2,8 @@ import React from 'react';
 
 const Card = () => {
     return (
-        <div>
-            <p>this is cart page</p>
+        <div className='p-4 border-2'>
+            <h1 className='text-3xl font-semibold text-center'>Order Summary</h1>
         </div>
     );
 };
