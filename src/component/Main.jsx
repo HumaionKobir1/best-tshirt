@@ -7,7 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const Main = () => {
     return (
-        <div>
+        <div className='container mx-auto'>
             <Header></Header>
             <div className='min-h-[calc(100vh-136px)]'>
                 <Outlet></Outlet>

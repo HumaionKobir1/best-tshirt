@@ -15,7 +15,7 @@ const Grandpa = () => {
             
             <MoneyContext.Provider value={[money, setMoney]}>
                 <RingContext.Provider value='GoldenRing'>
-                    <section className='flex gap-8 justify-center'>
+                    <section className='md:flex gap-8 justify-center'>
                         <Father ring={ring}></Father>
                         <Uncle></Uncle>
                         <Aunty></Aunty>

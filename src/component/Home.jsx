@@ -27,7 +27,7 @@ const Home = () => {
     }
     return (
         <div className='grid grid-cols-12 gap-8 container mx-auto'>
-            <div className='grid lg:grid-cols-3 sm:grid-cols-1 col-span-9 gap-8'>
+            <div className='grid lg:grid-cols-3 sm:grid-cols-1 md:col-span-9 col-span-full gap-8'>
             
                 {
                     tshirts.map(tshirt => <TShirt
@@ -37,7 +37,7 @@ const Home = () => {
                     ></TShirt>)
                 }
             </div>
-            <div className='col-span-3'>
+            <div className='md:col-span-3 col-span-full'>
                 <Card
                 cart = {cart}
                 handleRemoveFromCart = {handleRemoveFromCart}
