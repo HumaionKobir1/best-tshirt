@@ -44,3 +44,7 @@ export default Card;
  * 3. Logical &&: (if the condition is true then the next thing will be displayed)
  * 4. Logical || (if the condition is false then the next thing will be displayed)
  */
+
+/*
+1. CONDITIONAL CSS 
+*/ 
